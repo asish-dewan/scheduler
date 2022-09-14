@@ -1,11 +1,11 @@
 var timeDisplayEl = $('#currentDay')
 
 // Current day and time
-function displayTime() {
+function displayDate() {
 
-var currentTime = moment().format ('MMMM Do YYYY, h:mm:ss a');
-timeDisplayEl.text(currentTime);
-console.log("Tick tock");
+var currentDay = moment().format ('dddd MMMM Do');
+timeDisplayEl.text(currentDay);
+console.log("Today is the day");
 
 }
 
@@ -15,4 +15,7 @@ console.log("Tick tock");
 // Text input when user selects time block
 
 // Handle save button 
-setInterval(displayTime, 1000);
+
+
+
+displayDate();
