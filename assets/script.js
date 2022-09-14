@@ -1,4 +1,5 @@
-var timeDisplayEl = $('#currentDay')
+var timeDisplayEl = $('#currentDay');
+var description = document.getElementsByClassName("description");
 
 // Current day and time
 function displayDate() {
@@ -9,12 +10,33 @@ console.log("Today is the day");
 
 }
 
+// Save item to local storage 
 
-// Create timeblocks on page 
+function saveEvent(){
 
-// Text input when user selects time block
+    var eventText= {
+        description: description.value,
+    };
 
-// Handle save button 
+    localStorage.setItem("eventText", JSON.stringify(eventText))
+    console.log("this is saved");
+}
+
+// Get item from local storage
+
+function renderEvent(){
+
+    var description = JSON.parse(localStorage.getItem("eventText"));
+    if (description === null) {
+        document.getElementsByClassName("description").innerHTML = eventText.value;
+    } else {
+    return;
+    }
+
+}
+
+// Create event listener when save button is clicked
+
 
 
 
