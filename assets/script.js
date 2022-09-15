@@ -1,43 +1,37 @@
-var timeDisplayEl = $('#currentDay');
-var description = document.getElementsByClassName("description");
+var displayDateEl = $('#currentDay');
+var eventInput = $("#description");
+var saveButton = $("#save");
 
 // Current day and time
 function displayDate() {
-
-var currentDay = moment().format ('dddd MMMM Do');
-timeDisplayEl.text(currentDay);
-console.log("Today is the day");
-
+    var currentDay = moment().format ('dddd MMMM Do');
+    displayDateEl.text(currentDay);
+    console.log("Today is the day");
 }
 
-// Save item to local storage 
-
-function saveEvent(){
-
-    var eventText= {
-        description: description.value,
-    };
-
-    localStorage.setItem("eventText", JSON.stringify(eventText))
-    console.log("this is saved");
+ // render Event to the DOM
+function renderLastRegistered() {
+    var description = localStorage.getItem("#description").value;
+    eventInput.textContent = description;
 }
-
-// Get item from local storage
-
-function renderEvent(){
-
-    var description = JSON.parse(localStorage.getItem("eventText"));
-    if (description === null) {
-        document.getElementsByClassName("description").innerHTML = eventText.value;
-    } else {
-    return;
-    }
-
-}
-
 // Create event listener when save button is clicked
+saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
 
+    var description= document.querySelector("#description").value;
 
+    if (description === ""){
+        description.text("Freedom");
+    
+    }
+    else {
+        displayMessage ("Successfully saved to Local Storage");
+
+        localStorage.setItem("description",description);
+        renderLastRegistered();
+    }
+}) 
 
 
 displayDate();
+renderLastRegistered ();
