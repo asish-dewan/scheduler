@@ -11,27 +11,19 @@ function displayDate() {
 
  // render Event to the DOM
 function renderLastRegistered() {
-    var description = localStorage.getItem("#description").value;
+    var description = localStorage.getItem("#description");
     eventInput.textContent = description;
 }
 // Create event listener when save button is clicked
-saveButton.addEventListener("click", function(event) {
+saveButton.click(function(event) {
     event.preventDefault();
 
     var description= document.querySelector("#description").value;
-
-    if (description === ""){
-        description.text("Freedom");
     
-    }
-    else {
-        displayMessage ("Successfully saved to Local Storage");
-
         localStorage.setItem("description",description);
         renderLastRegistered();
-    }
+
 }) 
 
 
 displayDate();
-renderLastRegistered ();
