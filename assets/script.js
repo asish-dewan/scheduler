@@ -1,6 +1,5 @@
 var displayDateEl = $('#currentDay');
-var eventInput = $("#description");
-var saveButton = $("#save");
+var saveButton = $(".saveBtn");
 
 // Current day and time
 function displayDate() {
@@ -11,17 +10,17 @@ function displayDate() {
 
  // render Event to the DOM
 function renderLastRegistered() {
-    var description = localStorage.getItem("#description");
+    var description = localStorage.getItem(".description");
     eventInput.textContent = description;
 }
 // Create event listener when save button is clicked
 saveButton.click(function(event) {
     event.preventDefault();
 
-    var description= document.querySelector("#description").value;
+    var description= $("#description").val();
+    var time = $(saveButton).parent().attr("id");
     
-        localStorage.setItem("description",description);
-        renderLastRegistered();
+        localStorage.setItem(description, time);
 
 }) 
 
