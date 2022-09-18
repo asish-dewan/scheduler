@@ -20,17 +20,19 @@ $(document).ready(function() {
 
         localStorage.setItem(eventText, time);
     })
-})
+
+    // Time block indicator
+
+
+// Display item from local storage
+$("#8am .description").val(localStorage.getItem("8am"));
+$("#9am .description").val(localStorage.getItem("9am"));
+
+});
+
+
+
 
 // Create event listener when save button is clicked
-/* saveButton.click(function(event) {
-    event.preventDefault();
 
-    var description= $("#description").val();
-    var time = $(saveButton).parent().attr("id");
-    
-        localStorage.setItem(description, time);
-
-}) 
- */
 displayDate();
