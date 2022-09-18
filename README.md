@@ -14,7 +14,7 @@ This app is designed to run in the browser and feature dynamically updated HTML 
 
 My deployed website: https://asish-dewan.github.io/scheduler/
 
-![Final Webpage look](./assets/Password_generator.png)
+![Final Webpage look](./assets/images/Screen%20Shot%202022-09-18%20at%207.01.12%20pm.png)
 
 <br>
 
