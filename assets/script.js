@@ -30,8 +30,24 @@ $(document).ready(function() {
 
     // Loop through time blocks
     $(".time-block").each (function(){
-        var blockHour = parseInt($(".time-block").attr("id"));
+        var blockHour = parseInt($(this).children(".hour").attr("id").split("-")[1]);
         console.log (blockHour);
+
+        if (blockHour < currentTime) {
+            $(this).addClass("past");
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+        }
+        else if (blockHour === currentTime) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+        }
 
     })
     }
