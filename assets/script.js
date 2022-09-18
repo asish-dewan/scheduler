@@ -3,18 +3,27 @@ var saveButton = $(".saveBtn");
 
 // Current day and time
 function displayDate() {
-    var currentDay = moment().format ('dddd MMMM Do');
+    var currentDay = moment().format('dddd MMMM Do');
     displayDateEl.text(currentDay);
     console.log("Today is the day");
 }
 
- // render Event to the DOM
-function renderLastRegistered() {
-    var description = localStorage.getItem(".description");
-    eventInput.textContent = description;
-}
+$(document).ready(function() {
+    // Save button event listener
+
+    $(".saveBtn").on("click", function() {
+
+        var eventText = $(this).siblings(".description").val();
+        var time = $(this).siblings().attr("id");
+
+        // Save event and time to localStorage
+
+        localStorage.setItem(eventText, time);
+    })
+})
+
 // Create event listener when save button is clicked
-saveButton.click(function(event) {
+/* saveButton.click(function(event) {
     event.preventDefault();
 
     var description= $("#description").val();
@@ -23,6 +32,5 @@ saveButton.click(function(event) {
         localStorage.setItem(description, time);
 
 }) 
-
-
+ */
 displayDate();
