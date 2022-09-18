@@ -18,20 +18,25 @@ $(document).ready(function() {
 
         // Save event and time to localStorage
 
-        localStorage.setItem(eventText, time);
+        localStorage.setItem(time, eventText);
     })
 
     // Time block indicator
 
 
 // Display item from local storage
-$("#8am .description").val(localStorage.getItem("8am"));
-$("#9am .description").val(localStorage.getItem("9am"));
+$("#8am").siblings(".description").text(localStorage.getItem("8am"));
+$("#9am").siblings(".description").text(localStorage.getItem("9am"));
+$("#10am").siblings(".description").text(localStorage.getItem("10am"));
+$("#11am").siblings(".description").text(localStorage.getItem("11am"));
+$("#12pm").siblings(".description").text(localStorage.getItem("12pm"));
+$("#1pm").siblings(".description").text(localStorage.getItem("1pm"));
+$("#2pm").siblings(".description").text(localStorage.getItem("2pm"));
+$("#3pm").siblings(".description").text(localStorage.getItem("3pm"));
+$("#4pm").siblings(".description").text(localStorage.getItem("4pm"));
+$("#5pm").siblings(".description").text(localStorage.getItem("5pm"));
 
-});
-
-
-
+})
 
 // Create event listener when save button is clicked
 
