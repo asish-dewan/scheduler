@@ -23,20 +23,36 @@ $(document).ready(function() {
 
     // Time block indicator
 
+    function timeIndicator() {
+        // Get current time
+        var currentTime = moment().hour();
+        console.log (currentTime);
+
+    // Loop through time blocks
+    $(".time-block").each (function(){
+        var blockHour = parseInt($(".time-block").attr("id"));
+        console.log (blockHour);
+
+    })
+    }
 
 // Display item from local storage
-$("#8am").siblings(".description").text(localStorage.getItem("8am"));
-$("#9am").siblings(".description").text(localStorage.getItem("9am"));
-$("#10am").siblings(".description").text(localStorage.getItem("10am"));
-$("#11am").siblings(".description").text(localStorage.getItem("11am"));
-$("#12pm").siblings(".description").text(localStorage.getItem("12pm"));
-$("#1pm").siblings(".description").text(localStorage.getItem("1pm"));
-$("#2pm").siblings(".description").text(localStorage.getItem("2pm"));
-$("#3pm").siblings(".description").text(localStorage.getItem("3pm"));
-$("#4pm").siblings(".description").text(localStorage.getItem("4pm"));
-$("#5pm").siblings(".description").text(localStorage.getItem("5pm"));
+$("#hour8").siblings(".description").text(localStorage.getItem("hour8"));
+$("#hour9").siblings(".description").text(localStorage.getItem("hour9"));
+$("#hour10").siblings(".description").text(localStorage.getItem("hour10"));
+$("#hour11").siblings(".description").text(localStorage.getItem("hour11"));
+$("#hour12").siblings(".description").text(localStorage.getItem("hour12"));
+$("#hour13").siblings(".description").text(localStorage.getItem("hour13"));
+$("#hour14").siblings(".description").text(localStorage.getItem("hour14"));
+$("#hour15").siblings(".description").text(localStorage.getItem("hour15"));
+$("#hour16").siblings(".description").text(localStorage.getItem("hour16"));
+$("#hour17").siblings(".description").text(localStorage.getItem("hour17"));
+
+timeIndicator();
 
 })
+
+
 
 // Create event listener when save button is clicked
 
