@@ -63,6 +63,7 @@ $("#hour-14").siblings(".description").text(localStorage.getItem("hour-14"));
 $("#hour-15").siblings(".description").text(localStorage.getItem("hour-15"));
 $("#hour-16").siblings(".description").text(localStorage.getItem("hour-16"));
 $("#hour-17").siblings(".description").text(localStorage.getItem("hour-17"));
+$("#hour-18").siblings(".description").text(localStorage.getItem("hour-18"));
 
 timeIndicator();
 
